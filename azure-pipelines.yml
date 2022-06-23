@@ -19,12 +19,12 @@ stages:
     displayName: Build
     pool:
       vmImage: ubuntu-latest
-    steps:
+    steps:     
     - task: Docker@2
-    inputs:
-      containerRegistry: 'h44tle Docker Hub'
-      repository: 'h44tle/weatherapi'
-      command: 'buildAndPush'
-      Dockerfile: '**/Dockerfile'
-      tags:
+      inputs:
+        containerRegistry: 'h44tle Docker Hub'
+        repository: 'h44tle/weatherapi'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+        tags:
             $(tag)
